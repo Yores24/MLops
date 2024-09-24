@@ -7,7 +7,7 @@
 import logging
 import pandas as pd
 from zenml import step
-from src.model_dev import LinearRegression
+from src.model_dev import Linear_Regression
 from sklearn.base import RegressorMixin
 from .config import ModelNameConfig
 
@@ -29,7 +29,7 @@ def train_model(X_train:pd.DataFrame,X_test:pd.DataFrame,y_train:pd.Series,y_tes
         model=None
 
         if config.model_name=="LinearRegression":
-            model=LinearRegression().train(X_train,y_train)
+            model=Linear_Regression().train(X_train,y_train)
             return model
         else:
             raise ValueError("Model {} not suppported".format(config.model_name))

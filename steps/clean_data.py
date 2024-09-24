@@ -40,6 +40,7 @@ def clean_data(df:pd.DataFrame)->Tuple[
         datadivide=DataClean(proc_data,divide_strat)
         X_train,X_test,y_train,y_test=datadivide.handle_data()
         logging.info("Data Cleaning dividing complete")
+        return X_train,X_test,y_train,y_test
     except Exception as e:
         logging.error("Error in cleaning and divide {}".format(e))
         raise e

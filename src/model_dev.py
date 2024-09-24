@@ -19,7 +19,7 @@ class Model(ABC):
         """
         pass
 
-class LinearRegression(Model):
+class Linear_Regression(Model):
 
     def train(self, X_train, y_train):
         """

@@ -43,9 +43,9 @@ class DataPreProcessing(DataStrategy):
             data=data.drop(
                 [
                     "order_approved_at",
-                    "order_delivered_carrier_data",
-                    "order_delivered_customer_data",
-                    "order_estimated_delivery_data",
+                    "order_delivered_carrier_date",
+                    "order_delivered_customer_date",
+                    "order_estimated_delivery_date",
                     "order_purchase_timestamp",
                 ],
                 axis=1
@@ -53,7 +53,7 @@ class DataPreProcessing(DataStrategy):
             data['product_weight_g'].fillna(data['product_weight_g'].median(),inplace=True)
             data['product_length_cm'].fillna(data['product_length_cm'].median(),inplace=True)
             data['product_height_cm'].fillna(data['product_height_cm'].median(),inplace=True)
-            data['product_width_cm'].fillna(data['product_width'].median(),inplace=True)
+            data['product_width_cm'].fillna(data['product_width_cm'].median(),inplace=True)
             data['review_comment_message'].fillna("No review",inplace=True)
             data=data.select_dtypes(include=[np.number])
             data=data.drop(
